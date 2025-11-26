@@ -16,7 +16,7 @@
         const adicionarTarefa = document.getElementById("adicionarTarefa");
         const minhaLista =  document.getElementById("adicionarLista");
         const botaoTarefa =  document.getElementById("botaoTarefa");
-        function adicionarTarefa(){
+        function criarTarefa(){
             const texto = adicionarTarefa.value.trim();
             if(texto===""){
             //== é quando tem o tipo inteiro e real(1 e 1,0)
@@ -24,7 +24,7 @@
             alert ("digite uma tarefa")
             return;
         }
-    }
+    
         const li = document.createElement('li');
         li.textContent=texto;
         const div = document.createElement('div');
@@ -51,8 +51,8 @@
 
         adicionarTarefa.value="";
         adicionarTarefa.focus();
-
-        botaoTarefa.addEventListener('click', adicionarTarefa());
+    }
+        botaoTarefa.addEventListener('click', criarTarefa);
 
       </script>
 </body>

@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
+    <style>
+        .concluida{
+            text-decoration: line-through;
+            color: blueviolet;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +19,7 @@
         <input id="adicinartarefa" placeholder="Escreva sua nova tarefa" type="text" />
         <button id="botaotarefa">Adicionar Tarefa</button>
     </div>
-    <ul id="minhalista"></ul>
+    <ol id="minhalista"></ol>
     <script>
         const adicinartarefa = document.getElementById("adicinartarefa");
         const minhalista = document.getElementById("minhalista");

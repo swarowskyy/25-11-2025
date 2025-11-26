@@ -1,59 +1,64 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lista de tarefas</title>
+    <title>Lista de Tarefas</title>
 </head>
+
 <body>
-    <h1>lista de tarefas</h1>
-    <div id="novaTarefa">
-        <input id="adicionarTarefa" placeholder="Escreva sua nova tarefa" type="text"/>
-        <button id="botaoTarefa">Adicionar Tarefa</button>
+    <h1>Lista de Tarefas</h1>
+    <div id="novatarefa">
+        <input id="adicinartarefa" placeholder="Escreva sua nova tarefa" type="text" />
+        <button id="botaotarefa">Adicionar Tarefa</button>
     </div>
-    <ul id="minhaLista"></ul>
+    <ul id="minhalista"></ul>
     <script>
-        const adicionarTarefa = document.getElementById("adicionarTarefa");
-        const minhaLista =  document.getElementById("adicionarLista");
-        const botaoTarefa =  document.getElementById("botaoTarefa");
-        function criarTarefa(){
-            const texto = adicionarTarefa.value.trim();
-            if(texto===""){
-            //== é quando tem o tipo inteiro e real(1 e 1,0)
-            //=== é quando dois valores são iguais(1 e 1)
-            alert ("digite uma tarefa")
-            return;
-        }
-    
+        const adicinartarefa = document.getElementById("adicinartarefa");
+        const minhalista = document.getElementById("minhalista");
+        const botaotarefa = document.getElementById("botaotarefa");
+
+        function criartarefa() {
+            const texto = adicinartarefa.value.trim();
+            if (texto === "") {
+                alert("Digite um tarefa");
+                return;
+            }
+        
+
         const li = document.createElement('li');
-        li.textContent=texto;
-        const div = document.createElement('div');
+        li.textContent = texto;
+        const area = document.createElement('area');
         area.className = area;
-        const btnConcluir = document.createElement('button');
-        btnConcluir.textContent='Concluir';
-        btnConcluir.addEventListener('click',function(){
-            li.classList.toggle('concluida')
+
+        const btnconcluir = document.createElement('button');
+        btnconcluir.textContent = 'Concluir';
+        btnconcluir.addEventListener('click', function () {
+            li.classList.toggle('concluida');
         });
-        const btnExcluir = document.createElement('button');
-        btnExcluir.textContent='Excluir';
-        btnExcluir.addEventListener('click',function(){
-           minhaLista.appendChild(li);
+        const btnexcluir = document.createElement('button');
+        btnexcluir.textContent = 'Excluir';
+        btnexcluir.addEventListener('click', function () {
+            minhalista.appendChild(li);
         });
 
-        area.appendChild(btnConcluir);
-        area.appendChild(btnExcluir);
-        const spanTexto = document.createElement('span');
-        spanTexto.textContent=texto
-        li.textContent="";
-        li.appendChild(spanTexto);
+        area.appendChild(btnconcluir);
+        area.appendChild(btnexcluir);
+
+        const spantexto = document.createElement('span');
+        spantexto.textContent = texto;
+        li.textContent = "";
+        li.appendChild(spantexto);
         li.appendChild(area);
-        minhaLista.appendChild(li);
-
-        adicionarTarefa.value="";
-        adicionarTarefa.focus();
+        minhalista.appendChild(li);
+        
+       adicinartarefa.value = "";
+       adicinartarefa.focus();
     }
-        botaoTarefa.addEventListener('click', criarTarefa);
+      botaotarefa.addEventListener('click',criartarefa);
 
-      </script>
+    </script>
 </body>
+
 </html>

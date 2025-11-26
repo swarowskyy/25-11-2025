@@ -28,7 +28,32 @@
         const li = document.createElement('li');
         li.textContent=texto;
         const div = document.createElement('div');
-        area.className =  area;
+        area.className = area;
+        const btnConcluir = document.createElement('button');
+        btnConcluir.textContent='Concluir';
+        btnConcluir.addEventListener('click',function(){
+            li.classList.toggle('concluida')
+        });
+        const btnExcluir = document.createElement('button');
+        btnExcluir.textContent='Excluir';
+        btnExcluir.addEventListener('click',function(){
+           minhaLista.appendChild(li);
+        });
+
+        area.appendChild(btnConcluir);
+        area.appendChild(btnExcluir);
+        const spanTexto = document.createElement('span');
+        spanTexto.textContent=texto
+        li.textContent="";
+        li.appendChild(spanTexto);
+        li.appendChild(area);
+        minhaLista.appendChild(li);
+
+        adicionarTarefa.value="";
+        adicionarTarefa.focus();
+
+        botaoTarefa.addEventListener('click', adicionarTarefa());
+
       </script>
 </body>
 </html>
